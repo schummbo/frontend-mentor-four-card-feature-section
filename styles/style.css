@@ -1,0 +1,130 @@
+/*
+- Mobile: 375px
+- Desktop: 1440px
+*/
+
+:root {
+    /* Primary */
+    --Red: hsl(0, 78%, 62%);
+    --Cyan: hsl(180, 62%, 55%);
+    --Orange: hsl(34, 97%, 64%);
+    --Blue: hsl(212, 86%, 64%);
+
+    /* Neutral */
+    --Very-Dark-Blue: hsl(234, 12%, 34%);
+    --Grayish-Blue: hsl(229, 6%, 66%);
+    --Very-Light-Gray: hsl(0, 0%, 98%);
+
+    /* Typography */
+    --Base-Font-Size: 15px;
+    --Font-Family: 'Poppins', Sans-serif;
+    --Light-Weight: 200; 
+    --Mid-Weight: 400;
+    --Heavy-Weight: 600;
+}
+
+body {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: var(--Base-Font-Size);
+    font-family: var(--Font-Family);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--Very-Light-Gray);
+    color: var(--Grayish-Blue);
+}
+
+
+h1, h2 {
+    color: var(--Very-Dark-Blue);
+    line-height: 1rem;
+    font-size: 2rem;
+}
+
+h2 {
+    font-weight: var(--Light-Weight);
+}
+
+h1 {
+    font-weight: var(--Heavy-Weight);
+}
+
+main {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    column-gap: 1.3rem;
+    row-gap: 1.3rem;
+    margin-top: 3rem;
+}
+
+aside {
+    width: 360px;
+}
+
+.feature {
+    width: 300px;
+    box-shadow: 0px 10px 21px 0px rgba(163,163,163,0.3);
+    border-radius: 5px;
+    text-align: left;
+    padding: 1rem;
+    border-top: 4px solid black;
+}
+
+.feature > header {
+    font-size: 1.1rem;
+    color: var(--Very-Dark-Blue);
+    font-weight: var(--Heavy-Weight);
+}
+
+.feature > p {
+    font-size: .8rem;
+}
+
+.feature > .icon {
+    float: right;
+}
+
+.feature.supervisor {
+    grid-column: 1;
+    grid-row: 1/3;
+    justify-self: center;
+    align-self: center;
+    border-top-color: var(--Cyan);
+}
+
+.feature.team-builder {
+    grid-column: 2;
+    grid-row: 1;
+    justify-self: center;
+    align-self: start;
+    border-top-color: var(--Red);
+}
+
+.feature.karma {
+    grid-column: 2;
+    grid-row: 2;
+    justify-self: center;
+    align-self: end;
+    border-top-color: var(--Orange);
+}
+
+.feature.calculator {
+    grid-column: 3;
+    grid-row: 1/3;
+    justify-self: center;
+    align-self: center;
+    border-top-color: var(--Blue);
+}
+
+@media screen and (max-width: 1100px) {
+    main {
+        display: flex;
+        flex-direction: column;
+    }
+}
